@@ -1,0 +1,16 @@
+appdirs==1.4.3
+click==6.7
+Flask==0.11.1
+Flask-Mobility==0.1.1
+itsdangerous==0.24
+Jinja2==2.9.5
+MarkupSafe==1.0
+packaging==16.8
+pkg-resources==0.0.0
+pyparsing==2.2.0
+PyYAML==3.12
+six==1.10.0
+ua-parser==0.7.3
+user-agents==1.1.0
+uWSGI==2.0.14
+Werkzeug==0.12.1
