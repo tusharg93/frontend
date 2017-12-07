@@ -300,7 +300,7 @@
                                 <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
                                 </optgroup>
                             </select>
-                            <input style="width:70%;float:right;" class="form-control" type="text" required="" placeholder="Phone Number" id="phoneNumber">
+                            <input style="width:70%;float:right;" class="form-control" type="text" required="" placeholder="Phone Number" id="phoneNumber" onkeypress='return event.charCode >= 48 && event.charCode <= 57' minlength=10 maxlength=10>
                         </div>
                     </div>
 
