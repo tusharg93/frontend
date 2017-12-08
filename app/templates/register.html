@@ -59,7 +59,7 @@
 
 <body>
     <!-- Preloader -->
-    <div class="preloader">
+      <div class="preloader">
         <div class="cssload-speeding-wheel"></div>
     </div>
     <section id="wrapper" class="login-register">
@@ -315,14 +315,15 @@
 
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input type="email" class="form-control" id="email" placeholder="Email" data-error="" required>
-                            <div class="help-block with-errors"></div>
+                            <input type="email" class="form-control" id="email" placeholder="Email" data-error="" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                            <!--<div class="help-block with-errors"></div>-->
 
                         </div>
                     </div>
                     <div class="form-group " style="position: relative;">
                         <div class="col-xs-12">
                             <input class="form-control" value="" type="password" required placeholder="Password" minlength=7 id="password">
+                            <i class="show-pass fa fa-eye fa-lg" style="position: absolute;right: 0;bottom: 30px;" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();" ></i>
                         </div>
                         <div class="col-xs-12" id="">
                            <small> * Password contain atleast one capital letter, one digit 
@@ -424,6 +425,16 @@
 
         $(".select2").select2();
         });
+
+         function mouseoverPass(obj) {
+              var obj = document.getElementById('password');
+              obj.type = "text";
+            }
+            function mouseoutPass(obj) {
+              var obj = document.getElementById('password');
+              obj.type = "password";
+            }
+
     </script>
     <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmU9QwELtWHqFspUfYQVxCIFJ3osbsAkY &libraries=places&callback=initAutocomplete"
          async defer></script>-->
