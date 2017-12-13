@@ -55,7 +55,7 @@ $('#loginform').on('submit',function(e){
     }
    $.ajax({
     	type:'post',
-    	url:host_api+base_path'forms/register',
+    	url:host_api+base_path+'forms/register',
     	contentType:'application/json',
     	data:dataString,
     	success:function(data)
