@@ -67,7 +67,7 @@ $('#loginform').on('submit',function(e){
     		$(divforSuccess).addClass('row');
 
     		var p=document.createElement('div');
-    		$(p).html('Thank You for Sign in, Kindly verify you email by clicking verification link');
+    		$(p).html('Thank You for Sign in, Kindly verify your email by clicking verification link in your mail');
     		$(divforSuccess).append(p);
     		$('#loginform').append(divforSuccess);
 
