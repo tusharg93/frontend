@@ -1,29 +1,12 @@
 
+var host_api='http://52.77.252.230:8000/';
+var base_path='api/v1/';
+
 var emails=['gmail','yahoo'];
 
 var Initialize=function()
 {
-	/*($('#password').on('focus',function(){
-		$('#passwordvalidation').show();
-	})
-	/(*$('#password').on('keyup',function(e){
 
-		var value=$('#password').val();
-		
-		console.log(value);
-			console.log(e.key.match(/^[A-Z]*$/));
-		var validCapital=e.key.match(/^[A-Z]*$/);
-		var validSymbol=e.key.match('/[$-/:-?{-~!"^_`\[\]]/');
-		if(validCapital)
-		{
-			$('#capital').addClass('green');
-		}
-		
-		if(validSymbol)
-		{
-			$('#symbol').addClass('green');
-		}
-	});*/
 }
 
 $('#loginform').on('submit',function(e){
@@ -49,6 +32,7 @@ $('#loginform').on('submit',function(e){
 	    var afterdot=afterat[1].split('.');
 	    var normalemail=emails.indexOf(afterdot[0]);
 
+
 	    if(normalemail==0)
 	    {
 	    	alert('You are using normal email insted of official acconts. is it ok?');	
@@ -71,12 +55,22 @@ $('#loginform').on('submit',function(e){
     }
    $.ajax({
     	type:'post',
-    	url:'http://52.77.252.230:8000/api/v1/forms/register',
+    	url:host_api+base_path'forms/register',
     	contentType:'application/json',
     	data:dataString,
     	success:function(data)
     	{
     		console.log(data);
+    		$('#loginform').html('');
+
+    		var divforSuccess=document.createElement('div');
+    		$(divforSuccess).addClass('row');
+
+    		var p=document.createElement('div');
+    		$(p).html('Thank You for Sign in, Kindly verify you email by clicking verification link');
+    		$(divforSuccess).append(p);
+    		$('#loginform').append(divforSuccess);
+
     	},error:function(error)
     	{	
     		console.log(error);
