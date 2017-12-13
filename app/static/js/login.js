@@ -13,7 +13,7 @@ $('#loginform').submit(function(e){
 		data:dataString,
 		success:function(data)
 		{
-			window.location="/index.html";
+			window.location="/courtregistration";
 		},error:function(xhr,status,error)
 		{
 			$('#error').text("* "+error);
