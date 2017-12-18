@@ -64,7 +64,7 @@
     <div class="">
        <!--<a href="javascript:void(0)" class="text-center db m-b-40"><img src="../plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="../plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>-->
       <!-- multistep form -->
-        <form id="msform">
+        <div id="msform">
         <!-- progressbar -->
         <ul id="eliteregister">
         <li class="active">Set Defaults</li>
@@ -72,14 +72,131 @@
         <li>Stage 3</li>
         </ul>
         <!-- fieldsets -->
-        <fieldset>
+        <form id="firstform">
         <h2 class="fs-title">Create your account</h2>
         <h3 class="fs-subtitle">This is step 1</h3>
-        <input type="text" name="currency" placeholder="Select Currency" />
-        <input type="password" name="time" placeholder="Select Time zone" />
+       
         
+        <select name="" id="currency" class="form-control select2">
+          <option selected="" ">select currency</option>
+          <option value="USD">United States Dollars</option>
+          <option value="EUR">Euro</option>
+          <option value="GBP">United Kingdom Pounds</option>
+          <option value="DZD">Algeria Dinars</option>
+          <option value="ARP">Argentina Pesos</option>
+          <option value="AUD">Australia Dollars</option>
+          <option value="ATS">Austria Schillings</option>
+          <option value="BSD">Bahamas Dollars</option>
+          <option value="BBD">Barbados Dollars</option>
+          <option value="BEF">Belgium Francs</option>
+          <option value="BMD">Bermuda Dollars</option>
+          <option value="BRR">Brazil Real</option>
+          <option value="BGL">Bulgaria Lev</option>
+          <option value="CAD">Canada Dollars</option>
+          <option value="CLP">Chile Pesos</option>
+          <option value="CNY">China Yuan Renmimbi</option>
+          <option value="CYP">Cyprus Pounds</option>
+          <option value="CSK">Czech Republic Koruna</option>
+          <option value="DKK">Denmark Kroner</option>
+          <option value="NLG">Dutch Guilders</option>
+          <option value="XCD">Eastern Caribbean Dollars</option>
+          <option value="EGP">Egypt Pounds</option>
+          <option value="FJD">Fiji Dollars</option>
+          <option value="FIM">Finland Markka</option>
+          <option value="FRF">France Francs</option>
+          <option value="DEM">Germany Deutsche Marks</option>
+          <option value="XAU">Gold Ounces</option>
+          <option value="GRD">Greece Drachmas</option>
+          <option value="HKD">Hong Kong Dollars</option>
+          <option value="HUF">Hungary Forint</option>
+          <option value="ISK">Iceland Krona</option>
+          <option value="INR">India Rupees</option>
+          <option value="IDR">Indonesia Rupiah</option>
+          <option value="IEP">Ireland Punt</option>
+          <option value="ILS">Israel New Shekels</option>
+          <option value="ITL">Italy Lira</option>
+          <option value="JMD">Jamaica Dollars</option>
+          <option value="JPY">Japan Yen</option>
+          <option value="JOD">Jordan Dinar</option>
+          <option value="KRW">Korea (South) Won</option>
+          <option value="LBP">Lebanon Pounds</option>
+          <option value="LUF">Luxembourg Francs</option>
+          <option value="MYR">Malaysia Ringgit</option>
+          <option value="MXP">Mexico Pesos</option>
+          <option value="NLG">Netherlands Guilders</option>
+          <option value="NZD">New Zealand Dollars</option>
+          <option value="NOK">Norway Kroner</option>
+          <option value="PKR">Pakistan Rupees</option>
+          <option value="XPD">Palladium Ounces</option>
+          <option value="PHP">Philippines Pesos</option>
+          <option value="XPT">Platinum Ounces</option>
+          <option value="PLZ">Poland Zloty</option>
+          <option value="PTE">Portugal Escudo</option>
+          <option value="ROL">Romania Leu</option>
+          <option value="RUR">Russia Rubles</option>
+          <option value="SAR">Saudi Arabia Riyal</option>
+          <option value="XAG">Silver Ounces</option>
+          <option value="SGD">Singapore Dollars</option>
+          <option value="SKK">Slovakia Koruna</option>
+          <option value="ZAR">South Africa Rand</option>
+          <option value="KRW">South Korea Won</option>
+          <option value="ESP">Spain Pesetas</option>
+          <option value="XDR">Special Drawing Right (IMF)</option>
+          <option value="SDD">Sudan Dinar</option>
+          <option value="SEK">Sweden Krona</option>
+          <option value="CHF">Switzerland Francs</option>
+          <option value="TWD">Taiwan Dollars</option>
+          <option value="THB">Thailand Baht</option>
+          <option value="TTD">Trinidad and Tobago Dollars</option>
+          <option value="TRL">Turkey Lira</option>
+          <option value="VEB">Venezuela Bolivar</option>
+          <option value="ZMK">Zambia Kwacha</option>
+          <option value="EUR">Euro</option>
+          <option value="XCD">Eastern Caribbean Dollars</option>
+          <option value="XDR">Special Drawing Right (IMF)</option>
+          <option value="XAG">Silver Ounces</option>
+          <option value="XAU">Gold Ounces</option>
+          <option value="XPD">Palladium Ounces</option>
+          <option value="XPT">Platinum Ounces</option>
+        </select>
+     
+        <select name="DropDownTimezone" id="timezone" class="form-control select2">
+          <option selected="" ">select Time zone</option>
+          <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
+          <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
+          <option value="-10.0">(GMT -10:00) Hawaii</option>
+          <option value="-9.0">(GMT -9:00) Alaska</option>
+          <option value="-8.0">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+          <option value="-7.0">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+          <option value="-6.0">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+          <option value="-5.0">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+          <option value="-4.0">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+          <option value="-3.5">(GMT -3:30) Newfoundland</option>
+          <option value="-3.0">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+          <option value="-2.0">(GMT -2:00) Mid-Atlantic</option>
+          <option value="-1.0">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
+          <option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+          <option value="1.0">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+          <option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
+          <option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+          <option value="3.5">(GMT +3:30) Tehran</option>
+          <option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+          <option value="4.5">(GMT +4:30) Kabul</option>
+          <option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+          <option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+          <option value="5.75">(GMT +5:45) Kathmandu</option>
+          <option value="6.0">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+          <option value="7.0">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+          <option value="8.0">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+          <option value="9.0">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+          <option value="9.5">(GMT +9:30) Adelaide, Darwin</option>
+          <option value="10.0">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+          <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+          <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+        </select>
+            
           <div class="form-group">
-            <div class="col-md-12 tal">
+            <div class="col-md-12 tal" id="holes">
               <div class="col-sm-4 col-md-4 col-lg-4">
                 <div class="checkbox checkbox-primary p-t-0">
                     <input id="9" type="checkbox" style="width: auto">
@@ -101,8 +218,31 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-12 tal">
+        <select class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose Tea times" required="" id="teatime">
+              <option value="time1">Tea Time1</option>
+              <option value="time2">Tea Time2</option>
+              <option value="time3">Tea Time3</option>
+              <option value="time4">Tea Time4</option>
+              <option value="time5">Tea Time5</option>
+              <option value="time6">Tea Time6</option>
+              <option value="time7">Tea Time7</option>
+              <option value="time8">Tea Time8</option>
+              <option value="time9">Tea Time9</option>
+              <option value="time10">Tea Time10</option>
+              <option value="time11">Tea Time11</option>
+              <option value="time12">Tea Time12</option>
+              <option value="time13">Tea Time13</option>
+              <option value="time14">Tea Time14</option>
+              <option value="time15">Tea Time15</option>
+              <option value="time16">Tea Time16</option>
+              <option value="time17">Tea Time17</option>
+              <option value="time18">Tea Time18</option>
+              <option value="time19">Tea Time19</option>
+              <option value="time20">Tea Time20</option>
+        </select>
+
+        <div class="form-group" id="rates">
+           <!-- <div class="col-md-12 tal">
               <div class="col-sm-4 col-md-4 col-lg-4">
                 <div class="checkbox checkbox-primary p-t-0">
                     <input id="Member" type="checkbox" style="width: auto">
@@ -121,51 +261,46 @@
                     <label for="Visitor">Visitor/Online Rate</label>
                 </div>
               </div>  
-            </div>
-        </div>
-          <select class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
-              <option value="CT">Tea Time1</option>
-              <option value="DE">Tea Time2</option>
-              <option value="FL">Tea Time3</option>
-              <option value="GA">Tea Time4</option>
-              <option value="IN">Tea Time5</option>
-              <option value="ME">Tea Time6</option>
-              <option value="MD">Tea Time7</option>
-              <option value="MA">Tea Time8</option>
-              <option value="MI">Tea Time9</option>
-              <option value="NH">Tea Time10</option>
-              <option value="NJ">Tea Time11</option>
-              <option value="NY">Tea Time12</option>
-              <option value="NC">Tea Time13</option>
-              <option value="OH">Tea Time14</option>
-              <option value="PA">Tea Time15</option>
-              <option value="RI">Tea Time16</option>
-              <option value="SC">Tea Time17</option>
-              <option value="VT">Tea Time18</option>
-              <option value="VA">Tea Time19</option>
-              <option value="WV">Tea Time20</option>
-            </select>
-
-        <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
-        <fieldset>
+            </div>-->
+        </div>   
+        <select class="form-control select2" required="">
+            <option>Select</option>
+            <optgroup label="months">
+                <option value="1">1 Month</option>
+                <option value="2">2 Month</option>
+                <option value="3">3 Month</option>
+                <option value="4">4 Month</option>
+                <option value="5">5 Month</option>
+                <option value="6">6 Month</option>
+                <option value="7">7 Month</option>
+                <option value="8">8 Month</option>
+                <option value="9">9 Month</option>
+                <option value="10">10 Month</option>
+                <option value="11">11 Month</option>
+                <option value="12">12 Month </option>
+            </optgroup>
+        </select>
+        <button type="submit" name="next" class="next_1 action-button" value="Next" id="firstform">Next</button> 
+       <!--- <input type="submit" name="submit" class="submit action-button" value="Submit" />-->
+        </form>
+       <form>    
          <!-- .row -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="white-box">
-            <h3 class="box-title m-b-0">Pagination Footable</h3>
-            <p class="text-muted m-b-20">Create your table with Paginated Footable </p>
-   
-     
+
+            
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="white-box">
+                <h3 class="box-title m-b-0">Pagination Footable</h3>
+                <p class="text-muted m-b-20">Create your table with Paginated Footable </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
       <!-- /.row -->
         <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
-        <fieldset>
+        <input type="submit" name="next" class="next action-button" value="Next" />
+        </form>  
+         <form>
         <!--<h2 class="fs-title">Personal Details</h2>
         <h3 class="fs-subtitle">We will never sell it</h3>
         <input type="text" name="fname" placeholder="First Name" />
@@ -174,8 +309,8 @@
         <textarea name="address" placeholder="Address"></textarea>-->
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="submit" name="submit" class="submit action-button" value="Submit" />
-        </fieldset>
-        </form>
+         </form>
+        </div>
         <div class="clear"></div>
     </div>
   </div>
