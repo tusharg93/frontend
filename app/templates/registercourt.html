@@ -36,7 +36,7 @@
         margin-bottom:0px;
 
       }
-          /*setting alert notification time*/
+      /*setting alert notification time*/
       .sun_sat
       {
       padding:7px 13px;
@@ -63,11 +63,27 @@
         color:#fff;
         padding:7px 13px;
       }
+      .selected_day_1
+      {
+        background-color: rgba(51, 51, 51, 1);
+        border: none;
+        border-radius: 2px;
+        color:#fff;
+        padding:7px 13px;
+      }
+      .selected_day_2
+      {
+        background-color: rgba(51, 51, 51, 1);
+        border: none;
+        border-radius: 2px;
+        color:#fff;
+        padding:7px 13px;
+      }
       /*end alert time*/
       .margin_r_10
       {
         margin-right: 10px;
-      } 
+      }
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -319,17 +335,54 @@
          <!-- .row -->
 
             
-          <div class="row">
+           <div class="row">
             <div class="col-lg-12">
               <div class="white-box">
                 <h3 class="box-title m-b-0">Pagination Footable</h3>
                 <p class="text-muted m-b-20">Create your table with Paginated Footable </p>
-                 <div id="weekdays">
+
+                Select Weekdays
+                <div id="weekdays">
                   
                 </div>
+                Select Weekend
                 <div id="weekends">
                   
                 </div>
+
+                <div class="row">
+                  <div class="col-sm-4 col-md-4 col-lg-4">
+                        Closed/Maintenance day
+                  </div>
+                  <div class="col-sm-4 col-md-4 col-lg-4">
+                     <label for="yes">Yes</label>
+                      <input type="radio" name="leave" id="yes" value="yes"><br>
+                  </div>  
+                  <div class="col-sm-4 col-md-4 col-lg-4">  
+                      <label for="no">No</label>
+                      <input type="radio" name="leave" id="no" value="no"><br>
+                  </div>
+                </div> 
+
+                Select Day: 
+                <div id="selectleave">
+                  
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-4 col-md-4 col-lg-4">
+                        Golf Course is closed:
+                  </div>
+                  <div class="col-sm-4 col-md-4 col-lg-4">
+                     <label for="half">Half Day</label>
+                      <input type="radio" name="closedregion" id="half" value="half"><br>
+                  </div>  
+                  <div class="col-sm-4 col-md-4 col-lg-4">  
+                      <label for="full">Full Day</label>
+                      <input type="radio" name="closedregion" id="full" value="full"><br>
+                  </div>
+                </div>   
+
               </div>
             </div>
           </div>
@@ -387,8 +440,6 @@
           $(row_5).css('margin-top','10px');
           var div_1=document.createElement('div');
           $(div_1).addClass('');
-          //$(div_1).css('padding-bottom','40px');
-          //$(div_1).css('border-bottom','1px solid #ddd');
           var week=document.createElement('div'); 
           $(week).css('height','40px');
           $(week).addClass('row font_family padding_l_30');
@@ -396,14 +447,7 @@
           for(var day=0;day<days.length;day++)
           {
               var sun=document.createElement('sapn');
-              //if((agent_app_alerts.days.indexOf(days_read[day]))!=-1)
-              //{
-                //$(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time selected_day');
-              //} 
-              //else
-              //{
-                $(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time');
-              //}
+              $(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time');
               $(sun).data('day',days_read[day]);
 
               $(sun).html(days[day]);
@@ -414,14 +458,11 @@
           $(row_5).append(div_1);  
           $('#weekdays').append(row_5);
 
-
           var row_6=document.createElement('div');
           $(row_6).addClass('row ');
           $(row_6).css('margin-top','10px');
           var div_1=document.createElement('div');
           $(div_1).addClass('');
-          //$(div_1).css('padding-bottom','40px');
-          //$(div_1).css('border-bottom','1px solid #ddd');
           var week=document.createElement('div'); 
           $(week).css('height','40px');
           $(week).addClass('row font_family padding_l_30');
@@ -429,16 +470,8 @@
           for(var day=0;day<days.length;day++)
           {
               var sun=document.createElement('sapn');
-              //if((agent_app_alerts.days.indexOf(days_read[day]))!=-1)
-              //{
-                //$(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time selected_day');
-              //} 
-              //else
-              //{
-                $(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time');
-              //}
+              $(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time_1');
               $(sun).data('day',days_read[day]);
-
               $(sun).html(days[day]);
               $(week).append(sun);
           }
@@ -448,13 +481,63 @@
 
           $('#weekends').append(row_6);
 
+          var row_6=document.createElement('div');
+          $(row_6).addClass('row ');
+          $(row_6).css('margin-top','10px');
+          var div_1=document.createElement('div');
+          $(div_1).addClass('');
+          var week=document.createElement('div'); 
+          $(week).css('height','40px');
+          $(week).addClass('row font_family padding_l_30');
+
+          for(var day=0;day<days.length;day++)
+          {
+              var sun=document.createElement('sapn');
+              $(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time_2');
+              $(sun).data('day',days_read[day]);
+              $(sun).html(days[day]);
+              $(week).append(sun);
+          }
+          $(div_1).append(week);
+          
+          $(row_6).append(div_1); 
+
+          $('#selectleave').append(row_6);
+
+          
+          var weekend_days=[];
+          var week_days=[];
+          var leave_days=[];
 
           $('.notify_time').on('click',function(){
             //$(row_6).show();
+            week_days=[];
             $(this).toggleClass('selected_day');
             $('.selected_day').each(function(){
+                week_days.push($(this).data('day'));
             });
+            console.log(week_days);
           });
+          $('.notify_time_1').on('click',function(){
+            //$(row_6).show();
+            weekend_days=[];  
+            $(this).toggleClass('selected_day_1');
+            $('.selected_day_1').each(function(){
+                weekend_days.push($(this).data('day'));
+            });
+             console.log(weekend_days);
+          });
+
+          $('.notify_time_2').on('click',function(){
+            //$(row_6).show();
+            leave_days=[];  
+            $(this).toggleClass('selected_day_2');
+            $('.selected_day_2').each(function(){
+                leave_days.push($(this).data('day'));
+            });
+             console.log(weekend_days);
+          });
+
          //$(".select2").select2();
          $(".select2").select2();
             $('.selectpicker').selectpicker();
