@@ -36,6 +36,38 @@
         margin-bottom:0px;
 
       }
+          /*setting alert notification time*/
+      .sun_sat
+      {
+      padding:7px 13px;
+      color:#999999;
+      background-color: rgba(228, 228, 228, 1);
+      border-radius: 2px;
+      }
+      .week_days
+      {
+        /*background-color: rgba(51, 51, 51, 1);
+        border: none;
+        border-radius: 2px;
+        color:#fff;*/
+        color:#999999;
+        background-color: rgba(228, 228, 228, 1);
+        border-radius: 2px;
+        padding:7px 13px;
+      }
+      .selected_day
+      {
+        background-color: rgba(51, 51, 51, 1);
+        border: none;
+        border-radius: 2px;
+        color:#fff;
+        padding:7px 13px;
+      }
+      /*end alert time*/
+      .margin_r_10
+      {
+        margin-right: 10px;
+      } 
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -292,6 +324,12 @@
               <div class="white-box">
                 <h3 class="box-title m-b-0">Pagination Footable</h3>
                 <p class="text-muted m-b-20">Create your table with Paginated Footable </p>
+                 <div id="weekdays">
+                  
+                </div>
+                <div id="weekends">
+                  
+                </div>
               </div>
             </div>
           </div>
@@ -340,6 +378,83 @@
                $('.footable').trigger('footable_resize'); //fire re-size of footable
                
           });
+
+          var days=['Sun','Mon','Tues','Wed','Thu','Fri','Sat'];
+          var days_read=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+          //select day and time 
+          var row_5=document.createElement('div');
+          $(row_5).addClass('row ');
+          $(row_5).css('margin-top','10px');
+          var div_1=document.createElement('div');
+          $(div_1).addClass('');
+          //$(div_1).css('padding-bottom','40px');
+          //$(div_1).css('border-bottom','1px solid #ddd');
+          var week=document.createElement('div'); 
+          $(week).css('height','40px');
+          $(week).addClass('row font_family padding_l_30');
+
+          for(var day=0;day<days.length;day++)
+          {
+              var sun=document.createElement('sapn');
+              //if((agent_app_alerts.days.indexOf(days_read[day]))!=-1)
+              //{
+                //$(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time selected_day');
+              //} 
+              //else
+              //{
+                $(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time');
+              //}
+              $(sun).data('day',days_read[day]);
+
+              $(sun).html(days[day]);
+              $(week).append(sun);
+          }
+          $(div_1).append(week);
+          
+          $(row_5).append(div_1);  
+          $('#weekdays').append(row_5);
+
+
+          var row_6=document.createElement('div');
+          $(row_6).addClass('row ');
+          $(row_6).css('margin-top','10px');
+          var div_1=document.createElement('div');
+          $(div_1).addClass('');
+          //$(div_1).css('padding-bottom','40px');
+          //$(div_1).css('border-bottom','1px solid #ddd');
+          var week=document.createElement('div'); 
+          $(week).css('height','40px');
+          $(week).addClass('row font_family padding_l_30');
+
+          for(var day=0;day<days.length;day++)
+          {
+              var sun=document.createElement('sapn');
+              //if((agent_app_alerts.days.indexOf(days_read[day]))!=-1)
+              //{
+                //$(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time selected_day');
+              //} 
+              //else
+              //{
+                $(sun).addClass('sun_sat font_size_12 margin_r_10 cursor_pointer notify_time');
+              //}
+              $(sun).data('day',days_read[day]);
+
+              $(sun).html(days[day]);
+              $(week).append(sun);
+          }
+          $(div_1).append(week);
+          
+          $(row_6).append(div_1); 
+
+          $('#weekends').append(row_6);
+
+
+          $('.notify_time').on('click',function(){
+            //$(row_6).show();
+            $(this).toggleClass('selected_day');
+            $('.selected_day').each(function(){
+            });
+          });
          //$(".select2").select2();
          $(".select2").select2();
             $('.selectpicker').selectpicker();
@@ -372,7 +487,6 @@
                 });
                 return false;
             });
-
             var host_api='http://52.77.252.230:8000/';
             var base_path='api/v1/';  
 
@@ -413,7 +527,6 @@
                   console.log(xhr);
                 }
                })
-
     });
     </script>
     <!--slimscroll JavaScript -->
