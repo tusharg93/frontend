@@ -133,7 +133,22 @@
           padding:0px;
           width: 30%;
       }
-
+    .seasons
+    {
+      padding:3px 20px;color:#fff;margin-right: 5px;
+    }
+    .unselseacson
+    {
+      background-color: #ddd;
+    }
+    .selseason
+    {
+      background-color: #000;
+    }
+    .seasonSelection div
+    {
+      margin-top:10px;
+    }
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -454,6 +469,48 @@
         <input type="text" name="phone" placeholder="Phone" />
         <textarea name="address" placeholder="Address"></textarea>-->
 
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+              No. of Seasons
+           </div> 
+          <div class="col-sm-8 col-md-8 col-lg-8"> 
+            <table>
+                <tr>
+                    <td>  
+                      <span class="seasons unselseacson">
+                          1
+                      </span> 
+                    </td>
+                    <td>  
+                      <span class="seasons unselseacson">
+                        2
+                      </span> 
+                    </td>
+                    <td>  
+                      <span class="seasons unselseacson">
+                        3
+                      </span> 
+                    </td>
+                    <td>  
+                      <span class="seasons unselseacson">
+                        4
+                      </span> 
+                    </td>
+                    <td>  
+                      <span class="seasons unselseacson">
+                        5
+                      </span> 
+                    </td>
+                    <td>  
+                      <span class="seasons unselseacson">
+                        6
+                      </span> 
+                    </td>
+                </tr>
+            </table>
+          </div>    
+        </div>  
+        
         <div class="row" id="season1">
             <div class="col-sm-5 col-md-5 col-lg-5">
                 <select>
@@ -1004,6 +1061,15 @@
               $('#selectleave').hide('slow')
           }
       }
+
+       $('.unselseacson').click(function(){
+          $(this).toggleClass('selseason');
+          $(this).toggleClass('unselseacson');
+          console.log(this.innerText);
+          $('#season'+this.innerText).toggle();
+
+      });
+      $('#season1 , #season2 ,#season3, #season4 , #season6,#season5').hide();
     </script>
     <!--slimscroll JavaScript -->
     <script src="{{static_path}}js/jquery.slimscroll.js"></script>
