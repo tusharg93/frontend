@@ -26,7 +26,9 @@ $(".next_1").click(function(e){
 
 	//var doc = document.getElementById("language");
        // alert("You selected " + teatime.options[teatime.selectedIndex].value);
-	if((currency=='')||(zone=='')||(teatime=='')){return false;}
+
+    //uncomment these
+	//if((currency=='')||(zone=='')||(teatime=='')){return false;}
 	if(animating) return false;
 	animating = true;
 	
@@ -76,7 +78,7 @@ $(".next_1").click(function(e){
 
 	var dataString=JSON.stringify({hole_9:nine,hole_18:eighteen,tee_avl:join,currency:currency,timezone:zone,member:member,guest:guest,online:online,duration:duration});		
 	console.log(dataString);
-	 $.ajax({
+	/* $.ajax({
 	 	type:'post',
 	 	url:host_api+base_path+'forms/1',
 	 	contentType:"application/json",
@@ -92,7 +94,7 @@ $(".next_1").click(function(e){
 	 	},error:function(xhr,error,status){
 
 	 	}
-	 });
+	 });*/
 
 	current_fs = $(this).parent();
 	next_fs = $(this).parent().next();
@@ -126,7 +128,6 @@ $(".next_1").click(function(e){
 			easing: 'easeInOutBack'
 		});
 });
-
 
 $(".next_2").click(function(e){
 	console.log(e);
