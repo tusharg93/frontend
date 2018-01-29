@@ -477,32 +477,32 @@
             <table>
                 <tr>
                     <td>  
-                      <span class="seasons unselseacson">
+                      <span class="seasons unselseacson season1">
                           1
                       </span> 
                     </td>
                     <td>  
-                      <span class="seasons unselseacson">
+                      <span class="seasons unselseacson season2">
                         2
                       </span> 
                     </td>
                     <td>  
-                      <span class="seasons unselseacson">
+                      <span class="seasons unselseacson season3">
                         3
                       </span> 
                     </td>
                     <td>  
-                      <span class="seasons unselseacson">
+                      <span class="seasons unselseacson season4">
                         4
                       </span> 
                     </td>
                     <td>  
-                      <span class="seasons unselseacson">
+                      <span class="seasons unselseacson season5">
                         5
                       </span> 
                     </td>
                     <td>  
-                      <span class="seasons unselseacson">
+                      <span class="seasons unselseacson season6">
                         6
                       </span> 
                     </td>
@@ -670,7 +670,7 @@
     <script src="{{static_path}}js/footable-init.js"></script>
     <script src="{{static_path}}plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>  
     <script type="text/javascript" src="{{static_path}}plugins/bower_components/multiselect/js/jquery.multi-select.js"></script>
-        <script>
+           <script>
  
       $(document).ready(function() { 
          $('.action-button').click(function (e) {
@@ -762,173 +762,9 @@
           $('#selectleave').append(row_6);
 
           $('#selectleave').hide();
-
-          /*var time_period=document.createElement('div'); 
-        $(time_period).addClass('row padding_l_30');
-
-          var start_time=document.createElement('div');
-          $(start_time).addClass('col-md-6 col-sm-6 col-lg-6 padding_l_r_0');
-            //var select=document.createElement('se');
-            var options_end = { value1 : '01:00',value11 : '01:15',value2 : '01:30',value21 : '01:45',value3 : '02:00',
-                    value31 : '02:15',value4 : '02:30',value41 : '02:45',value5 : '03:00',value51 : '03:15',value6 : '03:30',value61 : '03:45',
-                    value7 : '04:00',value71 : '04:15',value8 : '04:30',value81 : '04:45',value9 : '05:00',
-                    value10 : '05:30',value101: '06:00',value111 : '06:15',value12 :'06:30',value121 : '06:45',
-                    value13 :'07:00',value131 : '07:15',value14: '07:30',value141 : '07:45',value15: '08:00',value151 : '08:15',value16: '08:30',value161 : '08:45',value17: '09:00',value18: '10:00'};
-            var options_start = { value1 : '08:00',value11 : '08:15',value2 : '08:30',value21 : '08:45',value3 : '09:00',value31 : '09:15',
-                    value4 : '09:30',value41 : '09:45',value5 : '10:00',value51 : '10:15',value6 : '10:30',value61 : '10:45',
-                    value7 : '11:00',value71 : '11:15',value8 : '11:30',value81 : '11:45',value81 : '11:45',value9 : '12:00'};
-            
-              //var default = 'value1';
-              //var start=agent_app_alerts.start_time;
-              //var start_am_pm=start.split(' ');
-              //var split_start=start.split(':');
-              //var compare_start=split_start[0]+':'+split_start[1];
-              var $select = $('<select id="start" title="Start"></select>');
-              var $option;
-
-              for (var val in options_start) {
-                  $option = $('<option value="' + val + '">' + options_start[val] + '</option>');
-                  //if (options_start[val] == compare_start) {
-                      ///$option.attr('selected', 'selected');
-                  //}
-                  $select.append($option);
-              }
-              $(start_time).html($select);
-              var am_pm=document.createElement('div');
-              $(am_pm).addClass('font_family');
-              var btn_fun=document.createElement('button');
-              $(btn_fun).attr('type','button');
-              //if(start_am_pm[1].toLowerCase()=='am')
-              //{
-                $(btn_fun).addClass('font_family margin_l_10 active_btn font_for_btn am_pm_btn_css get_start_ap');
-              //}
-             // else
-              //{
-               // $(btn_fun).addClass('font_family margin_l_10 non_active_btn font_for_btn am_pm_btn_css');
-              //}
-            
-            $(btn_fun).attr('id','am_start');
-            $(btn_fun).html('AM');
-            $(btn_fun).css('border-radius','3px 0px 0px 3px');
-            
-            var btn_regions=document.createElement('button');
-            $(btn_regions).attr('type','button');
-            //if(start_am_pm[1].toLowerCase()=='pm')
-             // {
-                //$(btn_regions).addClass('font_family active_btn font_for_btn am_pm_btn_css get_start_ap');
-              //}
-              //else
-              //{
-                $(btn_regions).addClass('font_family non_active_btn font_for_btn am_pm_btn_css');
-              //}
-            $(btn_regions).attr('id','pm_start');
-            $(btn_regions).html('PM');
-            $(btn_regions).css('border-radius','0px 3px 3px 0px');
-
-            $(btn_fun).on('click',function(){
-              $(row_6).show();
-              $(this).siblings().removeClass('active_btn');
-              $('.get_start_ap').removeClass('get_start_ap');
-              $('#pm_start').removeClass('non_active_btn');
-              $(this).removeClass('non_active_btn');
-              $(this).addClass('active_btn');
-              $(this).addClass('get_start_ap');
-            });
-
-            $(btn_regions).on('click',function(){
-              $(row_6).show();
-              $(this).siblings().removeClass('active_btn');
-              $('.get_start_ap').removeClass('get_start_ap');
-              $(this).removeClass('non_active_btn');
-              $(this).addClass('active_btn');
-              $(this).addClass('get_start_ap');
-            });
-            $(am_pm).append(btn_fun);
-              $(am_pm).append(btn_regions);
-              //$(start_time).append(select);
-              $(start_time).append(btn_fun);
-              $(start_time).append(btn_regions);
-              $(time_period).append(start_time);
-             // return $select; 
-
-          var end_time=document.createElement('div');
-          $(end_time).addClass('col-md-6 col-sm-6 col-lg-6');
-            //var select=document.createElement('div');
-            //var end=agent_app_alerts.end_time;
-            //var end_am_pm=end.split(' ');
-              //var split_end=end.split(':');
-              //var compare_end=split_end[0]+':'+split_end[1];
-
-              var $select = $('<select id="end" title="End"></select>');
-              var $option;
-
-              for (var val in options_end) {
-                  $option = $('<option value="' + val + '">' + options_end[val] + '</option>');
-                  //if (options_end[val] == compare_end) {
-                    //  $option.attr('selected', 'selected');
-                 // }
-                  $select.append($option);
-              }
-              //$(select).html($select);
-              $(end_time).html($select);
-              var am_pm=document.createElement('div');
-              $(am_pm).addClass('font_family');
-              var btn_fun=document.createElement('button');
-              $(btn_fun).attr('type','button');
-              //if(end_am_pm[1].toLowerCase()=='am')
-             // {
-                //$(btn_fun).addClass('margin_l_10 active_btn font_for_btn am_pm_btn_css get_end_ap');
-              //}
-              //else
-              //{
-                $(btn_fun).addClass('margin_l_10 non_active_btn font_for_btn am_pm_btn_css');
-              //}
-            $(btn_fun).addClass('font_family font_for_btn am_pm_btn_css');
-            $(btn_fun).attr('id','am_end');
-            $(btn_fun).html('AM');
-            $(btn_fun).css('border-radius','3px 0px 0px 3px');
-            
-            var btn_regions=document.createElement('button');
-            $(btn_regions).attr('type','button');
-            //if(end_am_pm[1].toLowerCase()=='pm')
-              //{
-                $(btn_regions).addClass('font_family active_btn font_for_btn am_pm_btn_css get_end_ap');
-              //}
-              //else
-              //{
-                //$(btn_regions).addClass('font_family non_active_btn font_for_btn am_pm_btn_css');
-              //}
-            $(btn_regions).attr('id','pm_end');
-            $(btn_regions).html('PM');
-            $(btn_regions).css('border-radius','0px 3px 3px 0px');
-
-            $(btn_fun).on('click',function(){
-          
-              $(this).siblings().removeClass('active_btn');
-              $('.get_end_ap').removeClass('get_end_ap');
-              $('#pm_end').removeClass('non_active_btn');
-              $(this).removeClass('non_active_btn');
-              $(this).addClass('active_btn');//
-              $(this).addClass('get_end_ap');
-            });
+           $('#closed').hide(); 
 
 
-            $(btn_regions).on('click',function(){
-          
-              $(this).siblings().removeClass('active_btn');
-              $('.get_end_ap').removeClass('get_end_ap');
-              $(this).removeClass('non_active_btn');
-              $(this).addClass('active_btn');
-              $(this).addClass('get_end_ap');
-            });
-              //$(end_time).append(select);
-               $(end_time).append(btn_fun);
-              $(end_time).append(btn_regions);
-              $(time_period).append(end_time);
-
-           $('#displaywhenhalf').append(time_period);
-           $('#displaywhenhalf').hide();
-           */
           var weekend_days=[];
           var week_days=[];
           var leave_days=[];
@@ -1035,19 +871,19 @@
                 {
                   console.log(xhr);
                 }
-               })
-
-
+            })
     });
       
       function halfDay() {
          
           if ($('#half').prop("checked")) {
               $('#displaywhenhalf').show('slow');
+              
           } 
 
           if ($('#full').prop("checked")) {
-              $('#displaywhenhalf').hide('slow')
+              $('#displaywhenhalf').hide('slow');
+             
           }
         
       }
@@ -1055,18 +891,31 @@
       {
           if ($('#yes').prop("checked")) {
               $('#selectleave').show('slow');
+              $('#closed').show('slow');
           } 
 
           if ($('#no').prop("checked")) {
-              $('#selectleave').hide('slow')
+              $('#selectleave').hide('slow');
+               $('#closed').hide('slow');
           }
       }
 
-       $('.unselseacson').click(function(){
-          $(this).toggleClass('selseason');
-          $(this).toggleClass('unselseacson');
+      $('.unselseacson').click(function(){
+          //$(this).toggleClass('selseason');
+          //$(this).toggleClass('unselseacson');
+          $('.selseason').removeClass('selseason');
           console.log(this.innerText);
-          $('#season'+this.innerText).toggle();
+          var i=this.innerText;
+
+           $('#season1 , #season2 ,#season3, #season4 , #season6,#season5').hide();
+
+          while(i!=0)
+          {
+            $('#season'+i).show();
+            $('.season'+i).addClass('selseason');
+            i--;
+          }
+           
 
       });
       $('#season1 , #season2 ,#season3, #season4 , #season6,#season5').hide();
